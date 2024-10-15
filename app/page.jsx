@@ -1,9 +1,9 @@
 
 
-export default function Home() {
+const Home = () => {
   return (
-    <main className="font-maghreb">
-      صفحه اصلی
-    </main>
-  );
+    <div>home page</div>
+  )
 }
+
+export default Home
