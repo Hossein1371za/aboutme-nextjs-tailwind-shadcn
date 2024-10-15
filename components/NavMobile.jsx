@@ -20,7 +20,28 @@ const NavMobile = () => {
       <SheetTrigger className="flex justify-center items-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
-      <SheetContent>content</SheetContent>
+      <SheetContent className="font-maghreb">
+        <div className="mt-32 mb-40 text-center text-2xl">
+          <Link href="/">
+            <h1 className="text-6xl font-semibold">
+              حسین<span className="text-accent">.</span>
+            </h1>
+          </Link>
+        </div>
+        <nav className="flex flex-col items-center justify-center gap-8">
+          {links.map((link, index) => (
+            <Link
+              key={index}
+              href={link.path}
+              className={`${
+                link.path === pathname && "text-accent border-accent border-b-2"
+              } hover:text-accent text-3xl transition-all`}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+      </SheetContent>
     </Sheet>
   );
 };
