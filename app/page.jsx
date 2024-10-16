@@ -4,7 +4,6 @@ import { FiDownload } from "react-icons/fi";
 // components
 import Socials from "@/components/Socials";
 
-
 const Home = () => {
   return (
     <section className="h-full">
@@ -17,8 +16,8 @@ const Home = () => {
               سلام من <br /> <span className="text-accent">حسین زحمتکشان</span>
             </h1>
             <p className="max-w-[580px] mb-9 text-white/80">
-              من حدود 2 ساله که در حال آموزش فرانت اند هستم و تو این مدت تونستم
-              قالب هایی جدیدترین تکنولوژی های مرتبط طراحی کنم.
+             حدود 2 ساله که در حال آموزش فرانت اند هستم و تو این مدت تونستم
+              قالب هایی با جدیدترین تکنولوژی های مرتبط طراحی کنم.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
@@ -30,7 +29,10 @@ const Home = () => {
                 <FiDownload className="text-xl" />
               </Button>
               <div className="mb-8 xl:mb-0">
-                <Socials />
+                <Socials
+                  containerStyles="flex gap-6"
+                  iconStyles="text-3xl hover:text-accent"
+                />
               </div>
             </div>
           </div>
