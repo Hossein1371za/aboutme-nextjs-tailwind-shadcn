@@ -6,13 +6,24 @@
   font-family: "maghreb";
   src: url("./fonts/A-Maghreb-jadid-Fontjo.com/A-Maghreb-jadid-Fontjo.com/A\ Maghreb\ jadid.ttf");
 }
+
 @font-face {
   font-family: "vazir";
   src: url("./fonts/vazirmatn-v33.003/fonts/ttf/Vazirmatn-Medium.ttf");
 }
 
-@layer base{
+@layer base {
   body {
     @apply font-vazir bg-primary text-white
+  }
+
+  .h1 {
+    @apply text-[48px] xl:text-[80px] font-semibold
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48px] font-semibold
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24px] font-semibold
   }
 }
