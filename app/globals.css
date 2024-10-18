@@ -11,11 +11,15 @@
   font-family: "vazir";
   src: url("./fonts/vazirmatn-v33.003/fonts/ttf/Vazirmatn-Medium.ttf");
 }
+.bg-photo{
+   background-color: #141e33;
+}
 
 @layer base {
   body {
     @apply font-vazir bg-primary text-white
   }
+ 
 
   .h1 {
     @apply text-[48px] xl:text-[80px] font-semibold
