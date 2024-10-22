@@ -25,7 +25,13 @@ const Stats = () => {
                 duration={5}
                 className="text-4xl xl:text-6xl font-extrabold text-accent"
               />
-              <p className={`${stat.text.length < 15 ?"max-w-[100px]" : "max-w-[150px]"}text-4xl text-white/80`}>{stat.text}</p>
+              <p
+                className={`${
+                  stat.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
+                } text-2xl xl:text-4xl  text-white/80`}
+              >
+                {stat.text}
+              </p>
             </div>
           ))}
         </div>
