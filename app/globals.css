@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "maghreb";
-  src: url("./fonts/A-Maghreb-jadid-Fontjo.com/A-Maghreb-jadid-Fontjo.com/A\ Maghreb\ jadid.ttf");
-}
 
-@font-face {
-  font-family: "vazir";
-  src: url("./fonts/vazirmatn-v33.003/fonts/ttf/Vazirmatn-Medium.ttf");
-}
-.bg-photo{
-   background-color: #141e33;
-}
+
 
 @layer base {
+  @font-face {
+    font-family: "maghreb";
+    src: url("./fonts/A-Maghreb-jadid-Fontjo.com/A-Maghreb-jadid-Fontjo.com/A\ Maghreb\ jadid.ttf");
+  }
+
+  @font-face {
+    font-family: "vazir";
+    src: url("./fonts/vazirmatn-v33.003/fonts/ttf/Vazirmatn-Medium.ttf");
+  }
+
   body {
     @apply font-vazir bg-primary text-white
   }
- 
+
 
   .h1 {
     @apply text-[48px] xl:text-[80px] font-semibold
   }
+
   .h2 {
     @apply text-[36px] xl:text-[48px] font-semibold
   }
+
   .h3 {
     @apply text-[20px] xl:text-[24px] font-semibold
+  }
+
+  .bg-photo {
+    background-color: #141e33;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #00ff99 ;
   }
 }
