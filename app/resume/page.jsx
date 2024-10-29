@@ -149,19 +149,47 @@ const skills = {
   ],
 };
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
-import {motion} from "framer-motion"
-
+import { ScrollArea } from "@/components/ui/tooltip";
+import { motion } from "framer-motion";
 
 const Resume = () => {
-  return <div>resume page</div>;
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex items-center justify-center py-12 xl:py-0"
+    >
+      <div className="container mx-auto">
+        <Tabs
+          defaultValue="تجربیات"
+          className="flex flex-col xl:flex-row gap-[60px]"
+        >
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
+            <TabsTrigger value="تجربیات">تجربیات</TabsTrigger>
+            <TabsTrigger value="تحصیلات">تحصیلات</TabsTrigger>
+            <TabsTrigger value="مهارت ها">مهارت ها</TabsTrigger>
+            <TabsTrigger value="درباره من">درباره من</TabsTrigger>
+          </TabsList>
+          {/* content */}
+          <div className="min-h-[70vh] w-full">
+            <TabsContent value="تجربیات" className="w-full">
+              تجربیات
+            </TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </motion.div>
+  );
 };
 
 export default Resume;
