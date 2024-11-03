@@ -229,8 +229,31 @@ const Resume = () => {
               </div>
             </TabsContent>
             {/* skills */}
-            <TabsContent value="مهارت ها" className="w-full">
-              مهارت ها
+            <TabsContent value="مهارت ها" className="w-full h-full">
+              <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col gap-[30px] text-center xl:text-right">
+                <h3 className="text-4xl font-bold">{skills.title}</h3>
+                <p className="text-white/60 mx-auto xl:mx-0 w-[600px] xl:w-full">
+                  {skills.description}
+                </p>
+                </div>
+                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 xl:gap-[30px] mt-3">
+                  {skills.skillList.map((skill,index)=>(
+                    <li key={index}>
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex items-center justify-center group">
+                            <div className="text-6xl group-hover:text-accent transition-all duration-300">{skill.icon}</div>
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p className="capitaliza">{skill.name}</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </TabsContent>
             {/* about me */}
             <TabsContent value="درباره من" className="w-full">
