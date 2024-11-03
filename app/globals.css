@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 
-
+*{
+  direction: rtl;
+}
 
 @layer base {
   @font-face {
