@@ -57,7 +57,7 @@ const experience = {
   icon: "../../assets/resume/badge.svg",
   title: "تجربیات من",
   description:
-    "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان",
+    " لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم ",
   items: [
     {
       company: "شرکت 1",
@@ -156,7 +156,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@radix-ui/react-tooltip";
-import { ScrollArea } from "@/components/ui/tooltip";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
 const Resume = () => {
@@ -172,7 +172,7 @@ const Resume = () => {
       <div className="container mx-auto">
         <Tabs
           defaultValue="تجربیات"
-          className="flex flex-col xl:flex-row gap-[60px]"
+          className="flex flex-col xl:flex-row-reverse gap-[60px]"
         >
           <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
             <TabsTrigger value="تجربیات">تجربیات</TabsTrigger>
@@ -182,8 +182,40 @@ const Resume = () => {
           </TabsList>
           {/* content */}
           <div className="min-h-[70vh] w-full">
+            {/* experiece */}
             <TabsContent value="تجربیات" className="w-full">
-              تجربیات
+              <div className="flex flex-col gap-[30px] text-center xl:text-right">
+                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <p className="text-white/60 mx-auto xl:mx-0 w-[600px] xl:w-full">
+                  {experience.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {experience.items.map((item,index)=>(
+                      <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-1">
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="text-xl mb-2">{item.position}</h3>
+                        <div className="flex items-center gap-1">
+                          <p className="text-white/60">{item.company}</p>
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+            {/* education */}
+            <TabsContent value="تحصیلات" className="w-full">
+              تحصیلات
+            </TabsContent>
+            {/* skills */}
+            <TabsContent value="مهارت ها" className="w-full">
+              مهارت ها
+            </TabsContent>
+            {/* about me */}
+            <TabsContent value="درباره من" className="w-full">
+              درباره من
             </TabsContent>
           </div>
         </Tabs>
@@ -193,3 +225,4 @@ const Resume = () => {
 };
 
 export default Resume;
+
