@@ -207,7 +207,26 @@ const Resume = () => {
             </TabsContent>
             {/* education */}
             <TabsContent value="تحصیلات" className="w-full">
-              تحصیلات
+            <div className="flex flex-col gap-[30px] text-center xl:text-right">
+                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <p className="text-white/60 mx-auto xl:mx-0 w-[600px] xl:w-full">
+                  {education.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                    {education.items.map((item,index)=>(
+                      <li key={index} className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-1">
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="text-xl mb-2">{item.degree}</h3>
+                        <div className="flex items-center gap-1">
+                          <p className="text-white/60">{item.institution}</p>
+                          <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
             </TabsContent>
             {/* skills */}
             <TabsContent value="مهارت ها" className="w-full">
