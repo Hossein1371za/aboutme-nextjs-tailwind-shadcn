@@ -10,7 +10,7 @@ const Header = () => {
     <header className="py-8 xl:py-12 text-white font-maghreb">
       <div className="container mx-auto flex justify-between items-center">
         {/* desktop nav */}
-        <div className="hidden xl:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
           <Nav />
           <Link href="/contact">
             <Button className="text-3xl">تماس با من</Button>
