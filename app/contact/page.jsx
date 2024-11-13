@@ -74,6 +74,8 @@ const contact = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              <Textarea className="h-[200px]" placeholder="پیام خو را اینجا بنوسید."/>
+              <Button size="md" className="max-w-40">ارسال پیام</Button>
             </form>
           </div>
           <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
